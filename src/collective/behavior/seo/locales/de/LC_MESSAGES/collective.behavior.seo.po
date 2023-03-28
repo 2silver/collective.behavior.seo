@@ -37,11 +37,11 @@ msgstr "SEO"
 
 #: ../behaviors/seo_fields.py:39
 msgid "SEO Description"
-msgstr "SEO omschrijving"
+msgstr "SEO Beschreibung - \"Meta Description\""
 
 #: ../behaviors/seo_fields.py:27
 msgid "SEO Title"
-msgstr "SEO titel"
+msgstr "SEO Titel - \"Meta Title\""
 
 #: ../configure.zcml:38
 msgid "Uninstalls the collective.behavior.seo add-on."
