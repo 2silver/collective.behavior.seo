@@ -2,11 +2,12 @@
 from collective.behavior.seo import _
 from plone import schema
 from plone.autoform.interfaces import IFormFieldProvider
-from plone.dexterity.interfaces import IDexterityContent
 from plone.supermodel import model
+from Products.CMFPlone.utils import safe_hasattr
 from zope.component import adapter
 from zope.interface import implementer
 from zope.interface import provider
+from ..interfaces import ISEOFieldsMarker
 
 
 @provider(IFormFieldProvider)
@@ -16,7 +17,7 @@ class ISEOFields(model.Schema):
     model.fieldset(
         "seofields",
         label=_(u"SEO"),
-        fields=("seo_title", "seo_description", "seo_robots"),
+        fields=("seo_title", "seo_description", "seo_robots", "seo_outdated"),
     )
 
     seo_title = schema.TextLine(
@@ -62,9 +63,24 @@ class ISEOFields(model.Schema):
         required=False,
     )
 
+    seo_outdated = schema.Bool(
+        title=_(u"label_seo_outdated", default=u"Outdated Content"),
+        description=_(
+            u"seo_outdated_help",
+            default=(
+                u"Check this box if the content is outdated and "
+                u"should marked as \"Old content\" for visitors and "
+                u"SEO (410 Gone)."
+            )
+        ),
+        default=False,
+        required=False,
+    
+    )
+
 
 @implementer(ISEOFields)
-@adapter(IDexterityContent)
+@adapter(ISEOFieldsMarker)
 class SEOFields(object):
     def __init__(self, context):
         self.context = context
@@ -98,3 +114,13 @@ class SEOFields(object):
     @seo_robots.setter
     def seo_robots(self, value):
         self.context.seo_robots = value
+
+    @property
+    def seo_outdated(self):
+        if safe_hasattr(self.context, "seo_outdated"):
+            return self.context.seo_outdated
+        return None
+
+    @seo_outdated.setter
+    def seo_outdated(self, value):
+        self.context.seo_outdated = value

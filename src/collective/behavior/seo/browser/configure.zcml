@@ -1,32 +1,34 @@
-<configure
-    xmlns="http://namespaces.zope.org/zope"
+<configure xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="collective.behavior.seo">
 
 
-    <browser:viewlet
-        name="plone.htmlhead.title"
+    <browser:viewlet name="plone.htmlhead.title"
         manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
         class=".title.TitleViewlet"
         permission="zope2.View"
-        layer="collective.behavior.seo.interfaces.ICollectiveBehaviorSeoLayer"
-        />
+        layer="collective.behavior.seo.interfaces.ICollectiveBehaviorSeoLayer" />
 
-    <browser:viewlet
-        name="plone.htmlhead.dublincore"
+    <browser:viewlet name="plone.htmlhead.dublincore"
         manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
         class=".metafields.MetaFieldsViewlet"
         permission="zope2.View"
-        layer="collective.behavior.seo.interfaces.ICollectiveBehaviorSeoLayer"
-        />
-    <browser:viewlet
-        name="collective.behavior.seo.metarobots"
+        layer="collective.behavior.seo.interfaces.ICollectiveBehaviorSeoLayer" />
+
+    <browser:viewlet name="collective.behavior.seo.metarobots"
         manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
         class=".metarobots.MetaRobotsViewlet"
         template="metarobots.pt"
         permission="zope2.View"
-        layer="collective.behavior.seo.interfaces.ICollectiveBehaviorSeoLayer"
-    />
+        layer="collective.behavior.seo.interfaces.ICollectiveBehaviorSeoLayer" />
+
+    <browser:viewlet name="collective.behavior.seo.outdated"
+        manager="plone.app.layout.viewlets.interfaces.IBelowContentTitle"
+        class=".viewlet.OutdatedViewlet"
+        template="outdated.pt"
+        permission="zope2.View"
+        layer="collective.behavior.seo.interfaces.ICollectiveBehaviorSeoLayer" />
+
 
 </configure>

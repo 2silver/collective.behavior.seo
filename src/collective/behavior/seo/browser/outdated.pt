@@ -1,0 +1,10 @@
+<metal:div tal:condition="view/available">
+  <div
+    data-status="outdated"
+    tal:condition="view/outdated|nothing"
+    i18n:translate=""
+    class="discreet"
+  >
+    This article is older than a year.
+  </div>
+</metal:div>
