@@ -8,6 +8,7 @@ from zope.component import adapter
 from zope.interface import implementer
 from zope.interface import provider
 from ..interfaces import ISEOFieldsMarker
+from z3c.relationfield.schema import RelationChoice
 
 
 @provider(IFormFieldProvider)
@@ -17,7 +18,7 @@ class ISEOFields(model.Schema):
     model.fieldset(
         "seofields",
         label=_(u"SEO"),
-        fields=("seo_title", "seo_description", "seo_robots", "seo_outdated"),
+        fields=("seo_title", "seo_description", "seo_robots", "seo_outdated", "seo_outdated_alternate"),
     )
 
     seo_title = schema.TextLine(
@@ -75,8 +76,19 @@ class ISEOFields(model.Schema):
         ),
         default=False,
         required=False,
-    
     )
+
+    seo_outdated_alternate = RelationChoice(
+        title=_(u"label_seo_outdated_alternate",
+                default=u"Alternate URL"),
+        description=_("seo_outdated_alternate_help", default=(
+            u"Alternate URL for outdated content. "
+            u"Maybe a new version of the content.")
+        ),
+        vocabulary='plone.app.vocabularies.Catalog',
+        required=False,
+    )
+
 
 
 @implementer(ISEOFields)
@@ -124,3 +136,14 @@ class SEOFields(object):
     @seo_outdated.setter
     def seo_outdated(self, value):
         self.context.seo_outdated = value
+
+
+    @property
+    def seo_outdated_alternate(self):
+        if safe_hasattr(self.context, "seo_outdated_alternate"):
+            return self.context.seo_outdated_alternate
+        return None
+
+    @seo_outdated_alternate.setter
+    def seo_outdated_alternate(self, value):
+        self.context.seo_outdated_alternate = value

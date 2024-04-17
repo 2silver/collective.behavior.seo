@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: collective.behavior.seo 1.0\n"
-"POT-Creation-Date: 2020-04-08 09:34+0000\n"
+"POT-Creation-Date: 2024-04-17 12:32+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -9,11 +9,11 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0\n"
-"Language: de\n"
 "Language-Code: de\n"
 "Language-Name: German\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: collective.behavior.seo\n"
+"Language: de\n"
 
 #: ../controlpanel/controlpanel.py:10
 msgid "Collective Behavior SEO settings"
@@ -23,25 +23,33 @@ msgstr "Collective Behavior SEO instellingen"
 msgid "Installs the collective.behavior.seo add-on."
 msgstr ""
 
-#: ../behaviors/seo_fields.py:51
+#: ../behaviors/seo_fields.py:49
 msgid "Metatag Robots"
 msgstr "Metatag Robots"
 
-#: ../interfaces.py:24
+#: ../interfaces.py:23
 msgid "Robot Tags"
 msgstr "Robot tags"
 
-#: ../behaviors/seo_fields.py:18
+#: ../behaviors/seo_fields.py:20
 msgid "SEO"
 msgstr "SEO"
 
-#: ../behaviors/seo_fields.py:39
+#: ../behaviors/seo_fields.py:37
 msgid "SEO Description"
 msgstr "SEO Beschreibung - \"Meta Description\""
 
-#: ../behaviors/seo_fields.py:27
+#: ../behaviors/seo_fields.py:25
 msgid "SEO Title"
 msgstr "SEO Titel - \"Meta Title\""
+
+#: ../browser/outdated.pt:12
+msgid "This content is maybe outdated."
+msgstr "Dieser Inhalt ist möglicherweise veraltet."
+
+#: ../browser/outdated.pt:13
+msgid "This could be more relevant content."
+msgstr "Dies könnte relevanterer Inhalt sein."
 
 #: ../configure.zcml:38
 msgid "Uninstalls the collective.behavior.seo add-on."
@@ -55,31 +63,42 @@ msgstr ""
 msgid "collective.behavior.seo (uninstall)"
 msgstr ""
 
+#. Default: "Outdated Content"
+#: ../behaviors/seo_fields.py:68
+msgid "label_seo_outdated"
+msgstr "Veralteter Inhalt"
+
+#. Default: "Alternate URL"
+#: ../behaviors/seo_fields.py:82
+msgid "label_seo_outdated_alternate"
+msgstr "Alternativer Inhalt"
+
 #. Default: "Enter combinations of robot tags, separated by comma's one combination on every line. The idea here is that the webmaster decides which combinations of multiple tags are sane, so that content editors don't need to compose logical combinations themselves from all individual tags."
-#: ../interfaces.py:25
+#: ../interfaces.py:24
 msgid "robot_tags_desc"
-msgstr ""
-"Vul combinaties in van robot tags, gescheiden door komma's, één combinatie per regel. "
-"Het idee is dat de webmaster besluit welke combinaties van tags zinvol zijn. "
-"Dan hoeven redacteuren niet zelf logische combinaties bij elkaar te puzzelen uit individuele tags."
+msgstr "Kombination von Robot-Tags eingeben, durch Kommas getrennt, eine Kombination pro Zeile. Die Idee ist, dass der Webmaster entscheidet, welche Kombinationen von mehreren Tags sinnvoll sind, damit die Inhaltseditoren keine logischen Kombinationen aus allen einzelnen Tags selbst erstellen müssen."
 
 #. Default: "Used as meta description field in the 'head' section of a page instead of the default description."
-#: ../behaviors/seo_fields.py:40
+#: ../behaviors/seo_fields.py:38
 msgid "seo_description_help"
 msgstr "Länge für Description mit SERP Snippet Tool ermitteln. Wir empfehlen, \"SERP Snippet Generator\" zu googeln."
 
+#. Default: "Alternate URL for outdated content. Maybe a new version of the content."
+#: ../behaviors/seo_fields.py:84
+msgid "seo_outdated_alternate_help"
+msgstr "Alternative URL für veralteten Inhalt. Möglicherweise eine neue Version des Inhalts."
+
+#. Default: "Check this box if the content is outdated and should marked as \"Old content\" for visitors and SEO (410 Gone)."
+#: ../behaviors/seo_fields.py:69
+msgid "seo_outdated_help"
+msgstr "Aktivieren, wenn der Inhalt veraltet ist und als \"Alter Inhalt\" für Besucher und SEO (410 Gone) markiert werden soll."
+
 #. Default: "Select options that hint search engines how to treat this content. Typically listings are to navigate the site, but add little to no value in its own and should be set to 'noindex, follow'. In some cases you want a listing to be indexed. E.g. when publishing a Top 10 recipes list with extra content above and below the list, in which case you would use 'index,follow'."
-#: ../behaviors/seo_fields.py:52
+#: ../behaviors/seo_fields.py:50
 msgid "seo_robots_help"
-msgstr ""
-"Kies opties die zoekmachines oppikken voor het gebruik van deze inhoud. "
-"Normaal gezien zijn lijsten bedoeld om door de site te navigeren, "
-"maar voegen ze weinig eigen waarde toe, en zouden op 'noindex, follow' gezet moeten worden. "
-"In sommige gevallen wil je dat een lijst wel geïndexeerd wordt. "
-"Bijvoorbeeld wanneer je een Top 10 van recepten hebt met extra inhoud onder en boven de lijst. "
-"In dat geval gebruik je 'index,follow'."
+msgstr "Kies opties die zoekmachines oppikken voor het gebruik van deze inhoud. Normaal gezien zijn lijsten bedoeld om door de site te navigeren, maar voegen ze weinig eigen waarde toe, en zouden op 'noindex, follow' gezet moeten worden. In sommige gevallen wil je dat een lijst wel geïndexeerd wordt. Bijvoorbeeld wanneer je een Top 10 van recepten hebt met extra inhoud onder en boven de lijst. In dat geval gebruik je 'index,follow'."
 
 #. Default: "Used in the web page 'head' section title and browser tab instead of the default title."
-#: ../behaviors/seo_fields.py:28
+#: ../behaviors/seo_fields.py:26
 msgid "seo_title_help"
 msgstr "Länge für Title mit SERP Snippet Tool ermitteln. Wir empfehlen, \"SERP Snippet Generator\" zu googeln."

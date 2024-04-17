@@ -31,4 +31,8 @@
         layer="collective.behavior.seo.interfaces.ICollectiveBehaviorSeoLayer" />
 
 
+    <!-- Define in your configure.zcml -->
+    <subscriber for="ZPublisher.interfaces.IPubAfterTraversal"
+        handler="collective.behavior.seo.browser.subscriber.set_http_status" />
+
 </configure>

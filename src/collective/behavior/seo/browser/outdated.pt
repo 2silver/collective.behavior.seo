@@ -1,10 +1,22 @@
-<metal:div tal:condition="view/available">
+<metal:div tal:condition="view/available" i18n:domain="collective.behavior.seo">
   <div
     data-status="outdated"
     tal:condition="view/outdated|nothing"
-    i18n:translate=""
-    class="discreet"
+    class="discreet highlight alert alert-info outdated container px-6 relative flex flex-col text-lg leading-relaxed wysiwig__text"
+    tal:define="
+      outdated view/outdated|nothing;
+      alternate view/seo_alternate|nothing;
+    "
   >
-    This article is older than a year.
+    <p class="mt-0 bg-primary-100 px-6">
+      <span i18n:translate="">This content is maybe outdated.</span>
+      <a
+        tal:condition="alternate|nothing"
+        i18n:translate=""
+        tal:attributes="href alternate"
+      >
+        This could be more relevant content.
+      </a>
+    </p>
   </div>
 </metal:div>
