@@ -78,16 +78,16 @@ class ISEOFields(model.Schema):
         required=False,
     )
 
-    seo_outdated_alternate = RelationChoice(
-        title=_(u"label_seo_outdated_alternate",
-                default=u"Alternate URL"),
-        description=_("seo_outdated_alternate_help", default=(
-            u"Alternate URL for outdated content. "
-            u"Maybe a new version of the content.")
-        ),
-        vocabulary='plone.app.vocabularies.Catalog',
-        required=False,
-    )
+    # seo_outdated_alternate = RelationChoice(
+    #     title=_(u"label_seo_outdated_alternate",
+    #             default=u"Alternate URL"),
+    #     description=_("seo_outdated_alternate_help", default=(
+    #         u"Alternate URL for outdated content. "
+    #         u"Maybe a new version of the content.")
+    #     ),
+    #     vocabulary='plone.app.vocabularies.Catalog',
+    #     required=False,
+    # )
 
 
 
@@ -138,12 +138,12 @@ class SEOFields(object):
         self.context.seo_outdated = value
 
 
-    @property
-    def seo_outdated_alternate(self):
-        if safe_hasattr(self.context, "seo_outdated_alternate"):
-            return self.context.seo_outdated_alternate
-        return None
+    # @property
+    # def seo_outdated_alternate(self):
+    #     if safe_hasattr(self.context, "seo_outdated_alternate"):
+    #         return self.context.seo_outdated_alternate
+    #     return None
 
-    @seo_outdated_alternate.setter
-    def seo_outdated_alternate(self, value):
-        self.context.seo_outdated_alternate = value
+    # @seo_outdated_alternate.setter
+    # def seo_outdated_alternate(self, value):
+    #     self.context.seo_outdated_alternate = value

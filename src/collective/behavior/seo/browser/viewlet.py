@@ -21,6 +21,6 @@ class OutdatedViewlet(common.ViewletBase):
         return self.behavior.seo_outdated
     
     def seo_alternate(self):
-        if safe_hasattr(self.context, "seo_outdated_alternate") and self.context.seo_outdated_alternate:
-            return self.context.seo_outdated_alternate.to_path
+        # if safe_hasattr(self.context, "seo_outdated_alternate") and self.context.seo_outdated_alternate:
+        #     return self.context.seo_outdated_alternate.to_path
         return None
