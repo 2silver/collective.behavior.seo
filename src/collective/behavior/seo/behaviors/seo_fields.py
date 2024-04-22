@@ -18,7 +18,9 @@ class ISEOFields(model.Schema):
     model.fieldset(
         "seofields",
         label=_(u"SEO"),
-        fields=("seo_title", "seo_description", "seo_robots", "seo_outdated", "seo_outdated_alternate"),
+        fields=("seo_title", "seo_description", "seo_robots", "seo_outdated"
+                # , "seo_outdated_alternate"
+                ),
     )
 
     seo_title = schema.TextLine(
