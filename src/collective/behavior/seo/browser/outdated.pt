@@ -1,22 +1,30 @@
-<metal:div tal:condition="view/available" i18n:domain="collective.behavior.seo">
+<metal:div
+  tal:condition="python:view.available() and view.outdated()"
+  i18n:domain="collective.behavior.seo"
+>
   <div
     data-status="outdated"
+    data-nosnippet
     tal:condition="view/outdated|nothing"
-    class="discreet highlight alert alert-info outdated container px-6 relative flex flex-col text-lg leading-relaxed wysiwig__text"
+    class="discreet highlight alert alert-info outdated container relative flex flex-col text-lg leading-relaxed wysiwig__text text-primary-500"
     tal:define="
       outdated view/outdated|nothing;
       alternate view/seo_alternate|nothing;
     "
   >
     <p class="mt-0 bg-primary-100 px-6">
-      <span i18n:translate="">This content is maybe outdated.</span>
-      <a
-        tal:condition="alternate|nothing"
+      <span
+        tal:condition="python:context.portal_type == 'News Item'"
         i18n:translate=""
-        tal:attributes="href alternate"
       >
-        This could be more relevant content.
-      </a>
+        This article is older than a year.
+      </span>
+      <span
+        tal:condition="python:context.portal_type == 'Event'"
+        i18n:translate=""
+      >
+        This event has already taken place.
+      </span>
     </p>
   </div>
 </metal:div>

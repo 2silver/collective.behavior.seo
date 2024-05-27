@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-04-17 12:32+0000\n"
+"POT-Creation-Date: 2024-05-22 11:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,7 +25,7 @@ msgstr ""
 msgid "Installs the collective.behavior.seo add-on."
 msgstr ""
 
-#: ../behaviors/seo_fields.py:49
+#: ../behaviors/seo_fields.py:51
 msgid "Metatag Robots"
 msgstr ""
 
@@ -37,20 +37,20 @@ msgstr ""
 msgid "SEO"
 msgstr ""
 
-#: ../behaviors/seo_fields.py:37
+#: ../behaviors/seo_fields.py:39
 msgid "SEO Description"
 msgstr ""
 
-#: ../behaviors/seo_fields.py:25
+#: ../behaviors/seo_fields.py:27
 msgid "SEO Title"
 msgstr ""
 
 #: ../browser/outdated.pt:12
-msgid "This content is maybe outdated."
+msgid "This article is older than a year."
 msgstr ""
 
-#: ../browser/outdated.pt:13
-msgid "This could be more relevant content."
+#: ../browser/outdated.pt:18
+msgid "This event has already taken place."
 msgstr ""
 
 #: ../configure.zcml:38
@@ -66,13 +66,8 @@ msgid "collective.behavior.seo (uninstall)"
 msgstr ""
 
 #. Default: "Outdated Content"
-#: ../behaviors/seo_fields.py:68
+#: ../behaviors/seo_fields.py:70
 msgid "label_seo_outdated"
-msgstr ""
-
-#. Default: "Alternate URL"
-#: ../behaviors/seo_fields.py:82
-msgid "label_seo_outdated_alternate"
 msgstr ""
 
 #. Default: "Enter combinations of robot tags, separated by comma's one combination on every line. The idea here is that the webmaster decides which combinations of multiple tags are sane, so that content editors don't need to compose logical combinations themselves from all individual tags."
@@ -81,26 +76,21 @@ msgid "robot_tags_desc"
 msgstr ""
 
 #. Default: "Used as meta description field in the 'head' section of a page instead of the default description."
-#: ../behaviors/seo_fields.py:38
+#: ../behaviors/seo_fields.py:40
 msgid "seo_description_help"
 msgstr ""
 
-#. Default: "Alternate URL for outdated content. Maybe a new version of the content."
-#: ../behaviors/seo_fields.py:84
-msgid "seo_outdated_alternate_help"
-msgstr ""
-
 #. Default: "Check this box if the content is outdated and should marked as \"Old content\" for visitors and SEO (410 Gone)."
-#: ../behaviors/seo_fields.py:69
+#: ../behaviors/seo_fields.py:71
 msgid "seo_outdated_help"
 msgstr ""
 
 #. Default: "Select options that hint search engines how to treat this content. Typically listings are to navigate the site, but add little to no value in its own and should be set to 'noindex, follow'. In some cases you want a listing to be indexed. E.g. when publishing a Top 10 recipes list with extra content above and below the list, in which case you would use 'index,follow'."
-#: ../behaviors/seo_fields.py:50
+#: ../behaviors/seo_fields.py:52
 msgid "seo_robots_help"
 msgstr ""
 
 #. Default: "Used in the web page 'head' section title and browser tab instead of the default title."
-#: ../behaviors/seo_fields.py:26
+#: ../behaviors/seo_fields.py:28
 msgid "seo_title_help"
 msgstr ""

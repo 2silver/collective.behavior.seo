@@ -2,6 +2,7 @@ import logging
 from zope.component import adapter
 from ZPublisher.interfaces import IPubAfterTraversal
 from Products.CMFPlone.utils import safe_hasattr
+from .viewlet import outdated
 
 logger = logging.getLogger(__name__)
 
@@ -15,9 +16,11 @@ def set_http_status(event):
 
     try:
         context = event.request["PARENTS"][0]
-    
-        if safe_hasattr(context, 'seo_outdated') and context.seo_outdated:
-            request.response.setStatus(410, reason='Gone')
+        # print(context)
+        if safe_hasattr(context, 'seo_outdated'):
+            if outdated(context):
+                request.response.setStatus(410, reason='Gone')
+        #     request.response.setStatus(410, reason='Gone')
     except KeyError as e:
         logger.error("KeyError: {}".format(e))
         pass
