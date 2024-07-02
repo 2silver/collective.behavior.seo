@@ -33,7 +33,8 @@ def outdated(context):
     now = DateTime()
     days_past_now = now - 366
 
-    if (bool(modified < days_past_now)):
+    if (bool(modified < days_past_now)) and \
+        context.portal_type in ["Event", "News Item"]:
         return True
     elif safe_hasattr(context, "seo_outdated") and context.seo_outdated:
         return True
